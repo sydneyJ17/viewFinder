@@ -13,7 +13,7 @@
         <!--ViewFinder-->
         <scene sceneID="dBn-F4-bhU">
             <objects>
-                <tableViewController id="fQR-ow-PMe" sceneMemberID="viewController">
+                <tableViewController id="fQR-ow-PMe" customClass="PhotoTableViewController" customModule="viewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gby-Sk-Ecw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ve-yj-eUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="143"/>
+            <point key="canvasLocation" x="-184" y="88"/>
         </scene>
         <!--Add New Photos-->
         <scene sceneID="eo0-Pt-fOX">
@@ -80,35 +80,39 @@
                                     <action selector="albumsButtonTapped:" destination="qq7-Bc-Sf5" eventType="touchUpInside" id="oqi-dt-UJ2"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8D-WD-xFE">
-                                <rect key="frame" x="119" y="350" width="177" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="8ev-ro-9Oe">
+                                <rect key="frame" x="74" y="161" width="270" height="154"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-mk-eT3">
                                 <rect key="frame" x="175" y="657" width="64" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savePhotoTappedWith_sender:" destination="qq7-Bc-Sf5" eventType="touchUpInside" id="JPO-yI-OoX"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ev-ro-9Oe">
-                                <rect key="frame" x="74" y="161" width="270" height="154"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8D-WD-xFE">
+                                <rect key="frame" x="121" y="352" width="177" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="eb0-JQ-hOb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photos" id="CH8-WP-5Wq"/>
                     <connections>
+                        <outlet property="captionText" destination="g8D-WD-xFE" id="NlN-YM-2Xv"/>
                         <outlet property="imageView" destination="8ev-ro-9Oe" id="yw4-4B-tcH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nD-TA-vGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693" y="143"/>
+            <point key="canvasLocation" x="558" y="83"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Wq-8o-bfN">
@@ -126,7 +130,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfd-n2-Uzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71.014492753623188" y="142.63392857142856"/>
+            <point key="canvasLocation" x="-935" y="88"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="600" height="402"/>
+    </resources>
 </document>
